@@ -99,6 +99,11 @@ public class ServerValidation extends HttpServlet {
 			result=false;
 			
 		}
+		if(emailp.equals(""))
+		{
+			error+="Please enter the Aptnumber";
+			result=false;
+		}
 	   // String emailp=request.getParameter("emailp");
 	   // String phc=request.getParameter("phc");
 	 //   HttpSession session=request.getSession();  
