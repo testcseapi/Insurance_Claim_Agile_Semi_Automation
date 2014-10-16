@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<project default="main" basedir=".">
+	<target name="main">
+		<mkdir dir="WEB-INF/classes" />
+		<echo message="inside"/>
+		<javac srcdir="src" destdir="WEB-INF/classes"
+		    classpath="WebContent/lib/javax.servlet-3.0.0.v201112011016.jar" >
+		</javac>
+	</target>
+</project>
