@@ -21,7 +21,7 @@
 <img src="images/farmersheader.png">
 <br /><font color="red"><center>
 <!----<b>"Please fill all the fields. Items marked with an asterisk(*) are required fields"</b>--></center></font></div>
-<div class="etab" name="error" id="error" >${errorMessage }</div>
+<div class="etab" style="color:#c80000" name="error" id="error" value="">${errorMessage }</div><br/>
 <form name="IClaim" action="ServerValidation" method="POST" id="IClaim">
 <div class= "policySearch ui-corner-all">
 <h4>Personal Information</h4>
@@ -29,7 +29,7 @@
     <tr>
       <td><span style="color:#ff0000">*</span><label>I am submitting claim as a</label></td>
       <td><select class="resized-selectbox" id="ClaimSubmit" name="ClaimSubmit" >
-      <option value="${ClaimSubmit}"></option>
+      <option></option>
       <option>Witness</option>
       <option>Claimant</option>
       <option>Agent-Former</option>
@@ -40,7 +40,7 @@
       <tr>
         <td>	
         <label>&nbsp;&nbsp;Policy Number</label></td>
-        <td><input type="text" class="resized-textbox" name="Pcno" id="Policy Number" value="${PolicyNumber}" />
+        <td><input type="text" class="resized-textbox" name="PolicyNumber" id="PolicyNumber" value="${PolicyNumber}" />
         </td>
          </table>
 </div>
@@ -68,7 +68,7 @@
    </td>
    <td>
    <span style="color:#ff0000">*</span><label>City<span class="tab"></span></label></td>
-   <td><input type="text" class="resized-ctextbox" name="City" id="City" value="${City}"/>
+   <td><input type="text" class="resized-ctextbox" name="City" id="City"/>
    </td>
    </tr>
    <tr>
@@ -97,17 +97,17 @@
    </td>
    <tr>
    <td>
-   <span style="color:#ff0000">*</span><label>Do you prefer email<br>&nbsp;&nbsp;Correspondence<span class="tab"></span></label></td>
-   <td><input type="radio" name="emailp" id="Y" value="Yes" value="${emailp}" />Yes&nbsp;<input type="radio" name="emailp" id="N" value="No" value="${emailp}"/>No
+   <label>Do you prefer email<br>&nbsp;&nbsp;Correspondence<span class="tab"></span></label></td>
+   <td><input type="radio" name="emailp" id="Y" value="Yes"  />Yes&nbsp;<input type="radio" name="emailp" id="N" value="No" />No
    </td>
   <td>&nbsp;&nbsp;<label>Preferred Language</label></td>
       <td><select class="resized-cselectbox" name="PreferredLanguage" id="PreferredLanguage">
-      <option value="${PreferredLanguage}"></option>
-      <option value="${PreferredLanguage}">English</option>
-      <option value="${PreferredLanguage}">Spanish</option>
-      <option value="${PreferredLanguage}">French</option>
-      <option value="${PreferredLanguage}">German</option>
-      <option value="${PreferredLanguage}">Japanese</option>
+      <option></option>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>German</option>
+      <option>Japanese</option>
       </select></td>
       </tr>
       <tr>
@@ -115,7 +115,7 @@
       </td>
       <td></td>
       <td>&nbsp;&nbsp;<label>Interpreter Needed</label></td>
-      <td><input type="hidden" name="Ineed" value="No" value="${Ineed}"/><input type="checkbox" name="Ineed" value="Yes" value="${Ineed}"/></td>
+      <td><input type="hidden" name="Ineed" value="No" /><input type="checkbox" name="Ineed" value="Yes" /></td>
       </tr>
       <tr>
    <td colspan="2" style="vertical-align:top">
@@ -126,22 +126,22 @@
          <tr>
           <td><label><span class="pttab"></span>Home&nbsp;Phone</label></td><span class="pttab"></span>
           <td><input type="text" class="resized-ptextbox" name="Hphone" id="Hp" value="${Hphone}"/></td>
-          <td><span class="ptab"></span><input type="radio" name="phc" id="H" value="HomePhone" value="${phc}"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="H" value="HomePhone" /></td>
          </tr>
          <tr>
           <td><label>Work&nbsp;Phone</label></td>
           <td><input type="text" class="resized-ptextbox" name="Wphone" id="Wp" value="${Wphone}"/></td>
-          <td><span class="ptab"></span><input type="radio" name="phc"  id="W" value="WorkPhone" value="${phc}"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc"  id="W" value="WorkPhone" /></td>
          </tr>
          <tr>
           <td><label>Cell&nbsp;Phone</label></td>
           <td><input type="text" class="resized-ptextbox" name="Cphone" id="Cp" value="${Cphone}"/></td>
-          <td><span class="ptab"></span><input type="radio" name="phc" id="C" value="CellPhone" value="${phc}" /></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="C" value="CellPhone"  /></td>
          </tr>
          <tr>
           <td><label>Alternate&nbsp;Phone</label></td>
           <td><input type="text" class="resized-ptextbox"/ name="Alphone" id="Ap" value="${Alphone}"/></td>
-          <td><span class="ptab"></span><input type="radio" name="phc" id="A"  value="AlternatePhone" value="${phc}"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="A"  value="AlternatePhone" /></td>
          </tr>
         </table>
       </fieldset>
@@ -158,21 +158,21 @@
    </tr>
    <tr>
    <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Date<span class="dttab"></span></label></td>
-   <td><input type="text" id="datepicker" name="datepicker" value="${datepicker}"/></td>
+   <td><input type="text" id="datepicker" name="datepicker"/></td>
    <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Time<span class="ttab"></span></label></td>
    <td><select class="resized-selectbox" name="Ltime" id="Ltime">
-      <option value="${Ltime}"></option>
-      <option value="${Ltime}">00:00</option>
-      <option value="${Ltime}">00:30</option>
-      <option value="${Ltime}">01:00</option>
-      <option value="${Ltime}">01:30</option>
-      <option value="${Ltime}">02:00</option>
+      <option></option>
+      <option>00:00</option>
+      <option>00:30</option>
+      <option>01:00</option>
+      <option>01:30</option>
+      <option>02:00</option>
       </select></td>
   </tr>
   <tr><td></td></tr>
   <tr>
      <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Description<span class="dttab"></span></label></td>
-     <td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${ldesc}</textarea></td>
+     <td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
    </tr>
    <tr>
    <tr>

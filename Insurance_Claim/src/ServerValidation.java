@@ -37,180 +37,153 @@ public class ServerValidation extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String alertmsg="submited successfully";
+		
 	
 		String ClaimSubmit=request.getParameter("ClaimSubmit");
+		String PolicyNumber=request.getParameter("PolicyNumber");
 	    String Fname=request.getParameter("Fname");
 	    String Lname=request.getParameter("Lname");
 	    String Aptnumber=request.getParameter("Aptnumber");
 	    String City=request.getParameter("City");
 	    String State=request.getParameter("State");
 	    String Zipcode=request.getParameter("Zipcode");
-	    String emailp=request.getParameter("emailp");
+	    String Email=request.getParameter("Email");
+	    String CEmail=request.getParameter("CEmail");
+	 	String Hphone=request.getParameter("Hphone");
+	    String Wphone=request.getParameter("Wphone");
+	    String Cphone=request.getParameter("Cphone");
+	    String Alphone=request.getParameter("Alphone");
 	    String datepicker=request.getParameter("datepicker");
 	    String Ltime=request.getParameter("Ltime");
 	    String Ldesc=request.getParameter("Ldesc");
+	    String Laddress=request.getParameter("Laddress");
+	    String Lcity=request.getParameter("Lcity");
+	    String Lzipcode=request.getParameter("Lzipcode");
 	    String LState=request.getParameter("LState");
 	    String LCountry=request.getParameter("LCountry");
 	    
-	    String error="";
+	 String error="";
 	    boolean result=true;
 	    
 	    if(ClaimSubmit.equals(""))
 		{
-			error+="Please Select the ClaimSubmit\n";
+			error+="Please Select the ClaimSubmit<br/>";
 			result=false;
 			
 		}
 		if(Fname.equals(""))
 		{
-			error+="Please enter Firstname\n";
+			error+="Please enter Firstname<br/>";
 			result=false;
 		}
 		if(Lname.equals(""))
 		{
-			error+="Please enter Lastname\n";
+			error+="Please enter Lastname<br/>";
 			result=false;
 		}
 		if(Aptnumber.equals(""))
 		{
-			error+="Please enter the Aptnumber";
+			error+="Please enter the Aptnumber<br/>";
 			result=false;
 			
 		}
 		if(City.equals(""))
 		{
-			error+="Please enter the City";
+			error+="Please enter the City<br/>";
 			result=false;
 		}
 		if(State.equals(""))
 		{
-			error+="Please select the State";
+			error+="Please select the State<br/>";
 			result=false;	
 		}
 		if(Zipcode.equals(""))
 		{
-			error+="Please enter the zipcode";
+			error+="Please enter the zipcode<br/>";
 			result=false;
 		}
 		if(Aptnumber.equals(""))
 		{
-			error+="Please enter the Aptnumber";
+			error+="Please enter the Aptnumber<br/>";
 			result=false;
 			
 		}
-		if(emailp.equals(""))
+	
+		if(Hphone.equals(""))
 		{
-			error+="Please enter the Aptnumber";
+			error+="Please enter the HomePhoneNumber<br/>";
 			result=false;
 		}
-	   // String emailp=request.getParameter("emailp");
-	   // String phc=request.getParameter("phc");
-	 //   HttpSession session=request.getSession();  
-     //   session.setAttribute("ClaimSubmit",ClaimSubmit);  
-	  //  System.out.println(ClaimSubmit);
-	   // request.setAttribute("ClaimSubmit",ClaimSubmit);
-	 /*   request.setAttribute("Fname",Fname);
-	    request.setAttribute("Lname",Lname);
-	    request.setAttribute("Aptnumber",Aptnumber);
-	    request.setAttribute("City",City);
-	    request.setAttribute("State",State);
-	    request.setAttribute("Zipcode",Zipcode);
-	    request.setAttribute("emailp",emailp);
-	    request.setAttribute("datepicker",datepicker);
-	    request.setAttribute("Ltime",Ltime);
-	    request.setAttribute("Ldesc",Ldesc);
-	    request.setAttribute("LState",LState);
-	    request.setAttribute("LCountry",LCountry);
-	    request.setAttribute("emailp",emailp);*/
-	    
-	    
-	    
-	    request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
-	  //  request.setAttribute("",);
-	    
-	   // request.setAttribute("alertmsg",alertmsg);
-	  /*  if(Fname.equals(""))
+		if(Wphone.equals(""))
 		{
-	    	String error="";
-	    	error+="Please enter Firstname\n";
-	    	request.setAttribute("errorMessage",error);
-	         request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
+			error+="Please enter the WorkPhoneNumber<br/>";
+			result=false;
 		}
-	    else
-	    {
-	    	   response.setContentType("text/html;charset=UTF-8");
+		if(Cphone.equals(""))
+		{
+			error+="Please enter the CPhoneNumber<br/>";
+			result=false;
+		}
+		if(Alphone.equals(""))
+		{
+			error+="Please enter the AlternatePhoneNumber<br/>";
+			result=false;
+		}
+		if(datepicker.equals(""))
+		{
+			error+="Please enter the LossDate<br/>";
+			result=false;
+		}
+		if(Ltime.equals(""))
+		{
+			error+="Please enter the LossTime<br/>";
+			result=false;
+		}
+		if(Ldesc.equals(""))
+		{
+			error+="Please Describe the LossDescription<br/>";
+			result=false;
+		}
+		if(LState.equals(""))
+		{
+			error+="Please select the LossState<br/>";
+			result=false;
+		}
+		if(LCountry.equals(""))
+		{
+			error+="Please select the LossCountry<br/>";
+			result=false;
+		}
+		if(result)
+		{
+			response.setContentType("text/html;charset=UTF-8");
 	    	   PrintWriter out = response.getWriter();
 	    	   out.println("<script type=\"text/javascript\">");
 	    	   out.println("alert('Submited Successfully');");
-	    	  // response.sendRedirect("Insurance_Claim.jsp");
 	    	    out.println("location='Insurance_Claim.jsp';");
 	    	   out.println("</script>");
-	    }
-	    
-	   
-	//	String nameParameter = request.getParameter("");
-		
-	/*	System.out.println(ClaimSubmit);
-				System.out.println(Fname);
-				System.out.println(Lname);
-				System.out.println (Aptnumber);
-				System.out.println(City);
-				System.out.println(State);
-				System.out.println(Zipcode);
-				System.out.println(emailp);
-				System.out.println(datepicker);
-				System.out.println(Ltime);
-				System.out.println(Ldesc);
-				System.out.println(LState);
-				System.out.println(LCountry);
-				System.out.println(phc);
-				boolean result=true;
-				String error="";
-				if(ClaimSubmit.equals(""))
-				{
-					error+="Please Select the ClaimSubmit";
-					result=false;
-					
-				}
-				if(Fname.equals(""))
-				{
-					error+="Please enter Firstname\n";
-					result=false;
-				}
-				if(Lname.equals(""))
-				{
-					error+="Please enter Lastname";
-					result=false;
-				}
-				if(ClaimSubmit.equals(""))
-				{
-					error+="Please Select the ClaimSubmit";
-					result=false;
-					
-				}
-				if(result)
-				{
-					System.out.println("SubmitedSucess");
-				}
-				else
-				{
-				  
-					request.setAttribute("errorMessage",error);
-					request.setAttribute("Fname",Fname);
-					//request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
-					response.sendRedirect("Insurance_Claim.jsp");
-
-				//	request.getParameter("Fname");
-					//request.getParameter("Lname");
-				//	request.setAttribute("Fname",Fname);
-				//	request.setAttribute("Lname",Lname);
-					//request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
-				}*/
-		//if(nameParameter.equals(""))
-	  //  request.setAttribute("errorMessage", "Please Entet the name");
-		//request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
-
+		}
+		else
+		{
+			request.setAttribute("errorMessage",error);
+			request.setAttribute("PolicyNumber",PolicyNumber);
+			request.setAttribute("Fname",Fname);
+			request.setAttribute("Lname",Lname);
+		    request.setAttribute("Aptnumber",Aptnumber);
+		    request.setAttribute("City",City);
+		    request.setAttribute("Zipcode",Zipcode);
+		    request.setAttribute("Email",Email);
+		    request.setAttribute("CEmail",CEmail);
+		    request.setAttribute("Hphone",Hphone);
+		    request.setAttribute("Wphone",Wphone);
+		    request.setAttribute("Cphone",Cphone);
+		    request.setAttribute("Alphone",Alphone);
+		    request.setAttribute("Ldesc",Ldesc);
+		    request.setAttribute("Laddress",Laddress);
+		    request.setAttribute("Lcity",Lcity);
+		    request.setAttribute("Lzipcode",Lzipcode);
+		    request.getRequestDispatcher("/Insurance_Claim.jsp").forward(request, response);
+		}
 
 	}
 
