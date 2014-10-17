@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.8.4
-Created-By: 1.7.0_67-b01 (Oracle Corporation)
-Built-By: TeamCakes
-Built-On: 16-October-2014
-Built-At: 08:05:47 PM IST
-
