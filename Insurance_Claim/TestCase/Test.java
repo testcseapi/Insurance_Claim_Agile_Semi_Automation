@@ -21,7 +21,7 @@ public class Test extends TestCase {
 		//driver= new HtmlUnitDriver();
 		driver = new FirefoxDriver();
 		//baseUrl = "https://s3.amazonaws.com/cadstechstore/Insurance_Claim_Form_Demo/WebContent/indexu.html";
-	// baseUrl = "http://192.168.0.186:8080/sample/indexu.jsp";
+	//// baseUrl = "http://192.168.0.186:8080/sample/indexu.jsp";
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
