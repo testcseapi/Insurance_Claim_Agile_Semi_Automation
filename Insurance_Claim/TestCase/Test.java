@@ -1,15 +1,12 @@
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
+import junit.framework.TestCase;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
-
-import junit.framework.TestCase;
 
 public class Test extends TestCase {
 
@@ -17,12 +14,15 @@ public class Test extends TestCase {
 	private String baseUrl;
 
 	public void setUp() throws Exception {
-        
-		//driver= new HtmlUnitDriver();
-		driver = new FirefoxDriver();
-		//baseUrl = "https://s3.amazonaws.com/cadstechstore/Insurance_Claim_Form_Demo/WebContent/indexu.html";
-	//// baseUrl = "http://192.168.0.186:8080/sample/indexu.jsp";
-		
+
+		driver = new HtmlUnitDriver(true);
+		// driver = new FirefoxDriver();
+		// baseUrl =
+		// "http://192.168.0.179:8081/Insurance_Claim/Insurance_Claim.jsp";
+		// baseUrl =
+		// "https://s3.amazonaws.com/cadstechstore/Insurance_Claim_Form_Demo/WebContent/indexu.html";
+		baseUrl = "http://cadsinsurance.elasticbeanstalk.com/Insurance_Claim.jsp";
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
@@ -33,8 +33,8 @@ public class Test extends TestCase {
 		driver.get(baseUrl);
 		new Select(driver.findElement(By.id("ClaimSubmit")))
 				.selectByVisibleText("Witness");
-		driver.findElement(By.id("Policy Number")).clear();
-		driver.findElement(By.id("Policy Number")).sendKeys("1234567A02");
+		driver.findElement(By.id("PolicyNumber")).clear();
+		driver.findElement(By.id("PolicyNumber")).sendKeys("1234567A02");
 		driver.findElement(By.id("Fname")).clear();
 		driver.findElement(By.id("Fname")).sendKeys("JHON");
 		driver.findElement(By.id("Lname")).clear();
@@ -62,9 +62,9 @@ public class Test extends TestCase {
 		driver.findElement(By.id("Cp")).clear();
 		driver.findElement(By.id("Cp")).sendKeys("1-360-350-5361");
 		driver.findElement(By.id("Ap")).clear();
-	   driver.findElement(By.id("Ap")).sendKeys("1-360-515-7172");
+		driver.findElement(By.id("Ap")).sendKeys("1-360-515-7172");
 		driver.findElement(By.id("datepicker")).click();
-		//driver.findElement(By.linkText("6")).click();
+		driver.findElement(By.linkText("6")).click();
 		new Select(driver.findElement(By.id("Ltime")))
 				.selectByVisibleText("01:00");
 		driver.findElement(By.id("Ldesc")).clear();
@@ -80,44 +80,29 @@ public class Test extends TestCase {
 		driver.findElement(By.name("Lzipcode")).sendKeys("98001");
 		new Select(driver.findElement(By.id("LCountry")))
 				.selectByVisibleText("USA");
-		Thread.sleep(2000);
+		// Thread.sleep(2000);
+
 		try {
 			driver.findElement(By.id("submit")).submit();
 		} catch (Exception e) {
-			System.out.println(driver.findElement(By.id("error")).getText()
-					.toString());
+			System.out.println(e.getMessage());
 		}
-		// driver.findElement(By.xpath("//button[@onclick='validateform()']")).click();
+
 		Thread.sleep(2000);
-		// System.out.println(driver.findElement(By.id("error")).getText().toString());
-		try
-		{
-			assertTrue("sucess", isAlertPresent());
-
-		}
-		catch (UnsupportedOperationException e)
-        {
-            System.out.println("Not yet present in HtmlUnit - UnsupportedOperationException");
-        }
-	}
-
-	private boolean isAlertPresent() {
 
 		try {
-
-			Alert alert = driver.switchTo().alert();
-			String almsg = alert.getText();
-			alert.accept();
-			System.out.println("Test Success:  " + almsg);
-			return true;
-
-		} catch (NoAlertPresentException e) {
-			System.out.println(driver.findElement(By.id("error")).getText()
-					.toString());
-			return false;
-
+			String error = driver.findElement(By.id("error")).getAttribute(
+					"value");
+			if (error.isEmpty()) {
+				System.out.println("Testcase Success");
+			} else {
+				System.out.println("Testcase Failure: " + error);
+			}
+		} catch (UnsupportedOperationException e) {
+			System.out.println(e.getMessage());
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			System.out.println(e.getMessage());
 		}
-
 	}
 
 	@AfterClass

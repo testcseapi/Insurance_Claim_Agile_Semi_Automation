@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Insurance_Claim" default="findbugs" basedir=".">
+<project name="Insurance_Claim" default="Test" basedir=".">
 
 	<property name="project-name" value="${ant.project.name}" />
 	<property name="builder" value="TeamCakes" />
@@ -9,6 +9,7 @@
 	<property name="classes-directory" value="WEB-INF/classes" />
 	<property name="web-directory" value="" />
 	<property name="web-xml-file" value="WEB-INF/web.xml" />
+
 	<tstamp prefix="build-info">
 		<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
 		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
@@ -21,6 +22,7 @@
 		</fileset>
 	</path>
 
+
 	<target name="main">
 		<mkdir dir="${classes-directory}" />
 		<!-- <echo message="inside" /> -->
@@ -29,12 +31,37 @@
 		</javac>
 	</target>
 
+
+
+	<!-- Testing Start -->
+	<path id="Testcase-Classpath">
+		<pathelement location="../TestCase" />
+		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
+		<pathelement location="lib/junit-4.10.jar" />
+	</path>
+	<target name="TestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="Test" depends="TestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="Test" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+
+	<!-- Testing End -->
+
+
 	<target name="findbugs" depends="main">
 		<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
 			classpath="lib/findbugs.jar" />
-		<findbugs home="" jvmargs="-ea -Xmx900m"
-			output="xml:withMessages" timestampNow="true" reportLevel="low"
-			chooseVisitors="+CheckExpectedWarnings" outputFile="../build/baseline.xml">
+		<findbugs home="" jvmargs="-ea -Xmx900m" output="xml:withMessages"
+			timestampNow="true" reportLevel="low" chooseVisitors="+CheckExpectedWarnings"
+			outputFile="../build/baseline.xml">
 			<sourcePath path="../src" />
 			<auxclasspath path="lib/" />
 			<class location="WEB-INF/classes" />
