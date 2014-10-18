@@ -29,7 +29,7 @@ public class Test extends TestCase {
 
 	@org.junit.Test
 	public void test() throws InterruptedException {
-
+		try {
 		driver.get(baseUrl);
 		new Select(driver.findElement(By.id("ClaimSubmit")))
 				.selectByVisibleText("Witness");
@@ -88,9 +88,9 @@ public class Test extends TestCase {
 			System.out.println(e.getMessage());
 		}
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
-		try {
+	
 			String error = driver.findElement(By.id("error")).getAttribute(
 					"value");
 			if (error.isEmpty()) {
@@ -102,6 +102,7 @@ public class Test extends TestCase {
 			System.out.println(e.getMessage());
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			System.out.println(e.getMessage());
+			System.out.println("Testcase Failure");
 		}
 	}
 
