@@ -63,7 +63,8 @@ public class ServerValidation extends HttpServlet {
 		String LState = request.getParameter("LState");
 		String LCountry = request.getParameter("LCountry");
 
-		String error = "";
+	//	String error = "";
+		String error = null;
 		boolean result = true;
 
    	/*	if (ClaimSubmit.equals("")) {
@@ -79,10 +80,16 @@ public class ServerValidation extends HttpServlet {
 		}
 
 		
-		if (Fname.equals("")) {
+	/*	if (Fname.equals("")) {
+			error += "Please enter Firstname<br/>";
+			result = false;
+		}*/
+		
+		if (Fname=="") {
 			error += "Please enter Firstname<br/>";
 			result = false;
 		}
+		
 		if (Lname.equals("")) {
 			error += "Please enter Lastname<br/>";
 			result = false;
