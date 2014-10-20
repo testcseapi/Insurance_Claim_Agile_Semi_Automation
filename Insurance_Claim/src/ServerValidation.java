@@ -80,15 +80,15 @@ public class ServerValidation extends HttpServlet {
 		}*/
 
 		
-	/*	if (Fname.equals("")) {
-			error += "Please enter Firstname<br/>";
-			result = false;
-		}*/
-		
-		if (Fname=="") {
+		if (Fname.equals("")) {
 			error += "Please enter Firstname<br/>";
 			result = false;
 		}
+		/*
+		if (Fname=="") {
+			error += "Please enter Firstname<br/>";
+			result = false;
+		}*/
 		
 		if (Lname.equals("")) {
 			error += "Please enter Lastname<br/>";
