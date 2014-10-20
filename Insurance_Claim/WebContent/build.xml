@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Insurance_Claim" default="Test" basedir=".">
+<project name="Insurance_Claim" default="ProTest" basedir=".">
 
 	<property name="project-name" value="${ant.project.name}" />
 	<property name="builder" value="TeamCakes" />
@@ -31,27 +31,62 @@
 		</javac>
 	</target>
 
-
-
 	<!-- Testing Start -->
+	
 	<path id="Testcase-Classpath">
 		<pathelement location="../TestCase" />
 		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
 		<pathelement location="lib/junit-4.10.jar" />
 	</path>
-	<target name="TestBuild">
+	<target name="DevTestBuild">
 		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="IntTest.java"/>
+		    <exclude name="ProTest.java"/>
 			<classpath refid="Testcase-Classpath" />
 		</javac>
 	</target>
 
-	<target name="Test" depends="TestBuild">
+	<target name="DevTest" depends="DevTestBuild">
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
-			<test name="Test" todir="../TestCase" />
+			<test name="DevTest" todir="../TestCase" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
+	
+	<target name="IntTestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="DevTest.java"/>
+		    <exclude name="ProTest.java"/>
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="IntTest" depends="IntTestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="IntTest" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+	
+	
+	<target name="ProTestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="IntTest.java"/>
+		    <exclude name="DevTest.java"/>
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="ProTest" depends="ProTestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="ProTest" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+	
 
 	<!-- Testing End -->
 
