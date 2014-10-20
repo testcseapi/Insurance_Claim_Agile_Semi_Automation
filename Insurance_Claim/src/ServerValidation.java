@@ -84,6 +84,11 @@ public class ServerValidation extends HttpServlet {
 			error += "Please enter Firstname<br/>";
 			result = false;
 		}
+		/*
+		if (Fname=="") {
+			error += "Please enter Firstname<br/>";
+			result = false;
+		}*/
 		
 		if (Lname.equals("")) {
 			error += "Please enter Lastname<br/>";
@@ -140,6 +145,7 @@ public class ServerValidation extends HttpServlet {
 //			error += "Please Describe the Loss Description<br/>";
 //			result = false;
 //		}
+//
 		if (LState.equals("")) {
 			error += "Please select the LossState<br/>";
 			result = false;
