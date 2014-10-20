@@ -137,7 +137,7 @@ public class ServerValidation extends HttpServlet {
 			result = false;
 		}
 //		if (Ldesc.equals("")) {
-//			error += "Please Describe the LossDescription<br/>";
+//			error += "Please Describe the Loss Description<br/>";
 //			result = false;
 //		}
 		if (LState.equals("")) {
