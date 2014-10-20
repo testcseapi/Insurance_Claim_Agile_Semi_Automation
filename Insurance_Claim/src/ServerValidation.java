@@ -63,21 +63,21 @@ public class ServerValidation extends HttpServlet {
 		String LState = request.getParameter("LState");
 		String LCountry = request.getParameter("LCountry");
 
-		String error = "";
-	//	String error = null;
+	//	String error = "";
+		String error = null;
 		boolean result = true;
 
-   	/*	if (ClaimSubmit.equals("")) {
-			error += "Please Select the ClaimSubmit<br/>";
-			result = false;
-
-		}*/
-		
-		if (ClaimSubmit=="") {
+   		if (ClaimSubmit.equals("")) {
 			error += "Please Select the ClaimSubmit<br/>";
 			result = false;
 
 		}
+		
+	/*	if (ClaimSubmit=="") {
+			error += "Please Select the ClaimSubmit<br/>";
+			result = false;
+
+		}*/
 
 		
 		if (Fname.equals("")) {
