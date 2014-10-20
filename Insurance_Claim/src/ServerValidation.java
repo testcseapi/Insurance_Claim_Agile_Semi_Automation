@@ -56,7 +56,7 @@ public class ServerValidation extends HttpServlet {
 		String Alphone = request.getParameter("Alphone");
 		String datepicker = request.getParameter("datepicker");
 		String Ltime = request.getParameter("Ltime");
-		// String Ldesc = request.getParameter("Ldesc");
+		String Ldesc = request.getParameter("Ldesc");
 		String Laddress = request.getParameter("Laddress");
 		String Lcity = request.getParameter("Lcity");
 		String Lzipcode = request.getParameter("Lzipcode");
@@ -134,11 +134,11 @@ public class ServerValidation extends HttpServlet {
 			error += "Please enter the LossTime<br/>";
 			result = false;
 		}
-		// if (Ldesc.equals("")) {
-		// error += "Please Describe the Loss Description<br/>";
-		// result = false;
-		// }
-		//
+		if (Ldesc.equals("")) {
+			error += "Please Describe the Loss Description<br/>";
+			result = false;
+		}
+
 		if (LState.equals("")) {
 			error += "Please select the LossState<br/>";
 			result = false;
@@ -168,7 +168,7 @@ public class ServerValidation extends HttpServlet {
 			request.setAttribute("Wphone", Wphone);
 			request.setAttribute("Cphone", Cphone);
 			request.setAttribute("Alphone", Alphone);
-			// request.setAttribute("Ldesc", Ldesc);
+			request.setAttribute("Ldesc", Ldesc);
 			request.setAttribute("Laddress", Laddress);
 			request.setAttribute("Lcity", Lcity);
 			request.setAttribute("Lzipcode", Lzipcode);
