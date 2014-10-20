@@ -62,7 +62,7 @@ public class ServerValidation extends HttpServlet {
 		String Lzipcode = request.getParameter("Lzipcode");
 		String LState = request.getParameter("LState");
 		String LCountry = request.getParameter("LCountry");
-//selenium
+//selenium Test Failed
 		String error = "";
 		// String error = null;
 		boolean result = true;
