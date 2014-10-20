@@ -95,9 +95,9 @@ public class DevTest extends TestCase {
 			System.out.println("Selenium Test Passed");
 
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("Selenium_Test_Failed" );
+			System.out.println("Selenium Test Failed" );
 		    System.out.println(e.getMessage());
-			Assert.fail("Selenium_Test_Failed   " + e.getMessage());
+			Assert.fail("Selenium Test Failed   " + e.getMessage());
 		}
 	}
 
