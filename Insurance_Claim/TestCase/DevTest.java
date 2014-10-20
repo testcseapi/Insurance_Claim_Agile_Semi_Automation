@@ -25,8 +25,8 @@ public class DevTest extends TestCase {
 		try {
 
 			driver.get(baseUrl);
-			new Select(driver.findElement(By.id("ClaimSubmit")))
-					.selectByVisibleText("Witness");
+		//	new Select(driver.findElement(By.id("ClaimSubmit")))
+		//			.selectByVisibleText("Witness");
 			driver.findElement(By.id("PolicyNumber")).clear();
 			driver.findElement(By.id("PolicyNumber")).sendKeys("1234567A02");
 		//	driver.findElement(By.id("Fname")).clear();
