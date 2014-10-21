@@ -91,7 +91,7 @@ public class IntTest extends TestCase {
 				
 			}*/
 			
-			//System.out.println("Selenium Test Passed");
+			System.out.println("Selenium Test Passed");
 
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			System.out.println("Selenium Test Failed" );
