@@ -84,7 +84,7 @@ public class DevTest extends TestCase {
 			driver.findElement(By.id("submit")).submit();
 			Thread.sleep(5000);
 
-			/*String error = driver.findElement(By.id("error")).getAttribute(
+			String error = driver.findElement(By.id("error")).getAttribute(
 					"value");
 			if (error.isEmpty()) {
 				System.out.println("Selenium Test Passed");
@@ -92,7 +92,7 @@ public class DevTest extends TestCase {
 				System.out.println("Selenium Test Failed");
 				System.out.println(error);
 				Assert.fail("Selenium Test Failed   " + error);
-			}*/
+			}
 
 			 System.out.println("Selenium Test Passed");
 
