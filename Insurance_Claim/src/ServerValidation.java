@@ -67,8 +67,8 @@ public class ServerValidation extends HttpServlet {
 		
 		boolean result = true;
 
-        if (ClaimSubmit == "") {
-//		if (ClaimSubmit.equals("")) {
+     //   if (ClaimSubmit == "") {
+		if (ClaimSubmit.equals("")) {
 			error += "Please Select the ClaimSubmit<br/>";
 			result = false;
 
@@ -133,7 +133,7 @@ public class ServerValidation extends HttpServlet {
 		if (Ldesc.equals("")) {
 			error += "Please Describe the Loss Description<br/>";
 			result = false;
-		}
+	}
 
 		if (LState.equals("")) {
 			error += "Please select the LossState<br/>";
