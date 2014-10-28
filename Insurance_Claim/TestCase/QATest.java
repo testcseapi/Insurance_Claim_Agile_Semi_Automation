@@ -8,14 +8,14 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 
-public class IntTest extends TestCase {
+public class QATest extends TestCase {
 
 	public static WebDriver driver;
 	private String baseUrl;
 
 	public void setUp() throws Exception {
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://cads-insurance-int.elasticbeanstalk.com/Insurance_Claim.jsp";
+		baseUrl = "http://cads-insurance-qa.elasticbeanstalk.com/Insurance_Claim.jsp";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}

@@ -40,7 +40,7 @@
 	</path>
 	<target name="DevTestBuild">
 		<javac srcdir="../TestCase" destdir="../TestCase">
-		    <exclude name="IntTest.java"/>
+		    <exclude name="QATest.java"/>
 		    <exclude name="ProTest.java"/>
 			<classpath refid="Testcase-Classpath" />
 		</javac>
@@ -54,7 +54,7 @@
 		</junit>
 	</target>
 	
-	<target name="IntTestBuild">
+	<target name="QATestBuild">
 		<javac srcdir="../TestCase" destdir="../TestCase">
 		    <exclude name="DevTest.java"/>
 		    <exclude name="ProTest.java"/>
@@ -62,10 +62,10 @@
 		</javac>
 	</target>
 
-	<target name="IntTest" depends="IntTestBuild">
+	<target name="QATest" depends="QATestBuild">
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
-			<test name="IntTest" todir="../TestCase" />
+			<test name="QATest" todir="../TestCase" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
@@ -73,7 +73,7 @@
 	
 	<target name="ProTestBuild">
 		<javac srcdir="../TestCase" destdir="../TestCase">
-		    <exclude name="IntTest.java"/>
+		    <exclude name="QATest.java"/>
 		    <exclude name="DevTest.java"/>
 			<classpath refid="Testcase-Classpath" />
 		</javac>
