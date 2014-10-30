@@ -101,16 +101,16 @@
 					</label></td>
 					<td><input type="text" class="resized-ctextbox" name="Email"
 						id="Email" value="${Email}" /></td>
-					<td>&nbsp;&nbsp;<label>Confirm Email<br>&nbsp;&nbsp;Address
+					<td><label>Confirm Email<br>Address
 					</label><span class="tab"></span></td>
 					<td><input type="text" class="resized-ctextbox" name="CEmail"
 						id="CEmail" value="${CEmail}" /></td>
 				<tr>
-					<td><label>Do you prefer email<br>&nbsp;&nbsp;Correspondence<span
+					<td><label>Do you prefer email<br>Correspondence<span
 							class="tab"></span></label></td>
 					<td><input type="radio" name="emailp" id="Y" value="Yes" />Yes&nbsp;<input
 						type="radio" name="emailp" id="N" value="No" />No</td>
-					<td>&nbsp;&nbsp;<label>Preferred Language</label></td>
+					<td><label>Preferred Language</label></td>
 					<td><select class="resized-cselectbox"
 						name="PreferredLanguage" id="PreferredLanguage">
 							<option></option>
@@ -124,7 +124,7 @@
 				<tr>
 					<td></td>
 					<td></td>
-					<td>&nbsp;&nbsp;<label>Interpreter Needed</label></td>
+					<td><label>Interpreter Needed</label></td>
 					<td><input type="hidden" name="Ineed" value="No" /><input
 						type="checkbox" name="Ineed" value="Yes" /></td>
 				</tr>
@@ -200,14 +200,14 @@
 					<td></td>
 				</tr>
 			  
-	  <!--  
+	       
 		 		 <tr>
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
 							class="dttab"></span></label></td>
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
 				</tr> 	
 		
-			-->		
+				
 				<tr>
 				<tr>
 					<td><label>&nbsp;&nbsp;Loss&nbsp;Location&nbsp;Address<span
