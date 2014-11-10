@@ -200,7 +200,7 @@
 					<td></td>
 				</tr>
 			  
-	    <!--Loss Description Field   	 
+	    <!--Loss Description Field - Appworks  	 
 		 		 <tr>
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
 							class="dttab"></span></label></td>

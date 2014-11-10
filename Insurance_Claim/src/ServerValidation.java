@@ -67,7 +67,8 @@ public class ServerValidation extends HttpServlet {
 		
 		boolean result = true;
 		
-      //if (ClaimSubmit == "") {
+      //Logical Error
+		//if (ClaimSubmit == "") {
 		 if (ClaimSubmit.equals("")) {
 			error += "Please Select the ClaimSubmit<br/>";
 			result = false;
