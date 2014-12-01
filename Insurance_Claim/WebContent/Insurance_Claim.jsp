@@ -201,7 +201,8 @@
 				</tr>
 			  
 	    <!--Loss Description Field - Appworks -->
-		 		 <tr>
+	    		
+		 		 <tr style="color:red">
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
 							class="dttab"></span></label></td>
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
