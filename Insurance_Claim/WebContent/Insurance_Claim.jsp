@@ -16,6 +16,9 @@
 		$("#datepicker").datepicker();
 	});
 </script>
+<style>
+body{font-family:"Arial"}
+</style>
 </head>
 <body>
 	<link rel='stylesheet' href='css/Insurance claim.css' type='text/css' />
@@ -200,12 +203,19 @@
 					<td></td>
 				</tr>
 			  
+
 	    <!--Loss Description Field added- Appworks  -->
 		 		 <tr>
+
+	    <!--Loss Description Field - Appworks -->
+		 		 <tr style="background-color:yellow">
+
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
 							class="dttab"></span></label></td>
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
 				</tr> 	
+		
+		
 		
 		
 				<tr>
