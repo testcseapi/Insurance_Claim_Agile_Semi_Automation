@@ -207,7 +207,7 @@ body{font-family:"Arial"}
 	 
 		 		 
 
-	    <!--Loss Description Field Demo - Appworks Demo Test -->    
+	    <!--Loss Description Field Demo - Appworks Demo Test   
 		 		 <tr style="background-color:yellow">
 
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
@@ -215,7 +215,7 @@ body{font-family:"Arial"}
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
 				</tr> 	
 		  
-		
+		-->  
 		
 				<tr>
 					<td><label>&nbsp;&nbsp;Loss&nbsp;Location&nbsp;Address<span
