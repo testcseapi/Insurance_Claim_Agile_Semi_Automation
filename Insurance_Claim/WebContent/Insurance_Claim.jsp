@@ -204,10 +204,10 @@ body{font-family:"Arial"}
 				</tr>
 			  
 
-	    <!--Loss Description Field added- Appworks  -->
-		 		 <tr>
+	 
+		 		 
 
-	    <!--Loss Description Field - Appworks Demo   -->    
+	    <!--Loss Description Field Demo - Appworks Demo   -->    
 		 		 <tr style="background-color:yellow">
 
 					<td><span style="color: #ff0000">*</span><label>Loss&nbsp;Description<span
@@ -215,7 +215,6 @@ body{font-family:"Arial"}
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
 				</tr> 	
 		  
-		
 		
 		
 				<tr>
