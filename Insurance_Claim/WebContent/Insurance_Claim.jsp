@@ -219,8 +219,6 @@ body{font-family:"Arial"}
        <!-->Loss Description Field Demo - Appworks Demo  -->
 		
 		
-		
-		
 				<tr>
 					<td><label>&nbsp;&nbsp;Loss&nbsp;Location&nbsp;Address<span
 							class="tab"></span></label></td>
