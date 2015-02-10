@@ -1,1 +1,0 @@
-http://54.149.72.93:8080/Insurance_Claim/
