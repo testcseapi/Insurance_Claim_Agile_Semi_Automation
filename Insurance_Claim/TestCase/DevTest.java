@@ -27,12 +27,8 @@ public class DevTest extends TestCase {
 		
 
 		public void setUp() throws Exception {
-			
-			in = new BufferedReader(
-		            new InputStreamReader(getClass().getResourceAsStream("/TestCasesURL.txt")));
-			String line = in.readLine();
 			driver = new HtmlUnitDriver();
-			baseUrl=line;
+			baseUrl = "http://cads-insurance-dev.elasticbeanstalk.com/Insurance_Claim.jsp";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 		}
