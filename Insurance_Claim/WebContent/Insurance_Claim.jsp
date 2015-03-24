@@ -205,7 +205,7 @@ body{font-family:"Arial"}
 				</tr>
 			  
 
-	  <!--Loss Description Field AddDemo- Appworks Demo test----- begin -->
+	  <!--Loss Description Field AddDemo- Appworks Demo test----- begin 
 		
 		 		 <tr style="background-color:red">
 
