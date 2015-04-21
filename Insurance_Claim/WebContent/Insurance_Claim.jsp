@@ -205,7 +205,7 @@ body{font-family:"Arial"}
 				</tr>
 			  
 
-	  <!--Loss Description Field AddDemo- Appworks Demo ----- begin -->
+	  <!--Loss Description Field AddDemo- Appworks Demo ----- begin --->
 		
 		 		 <tr style="background-color:red">
 
@@ -213,7 +213,7 @@ body{font-family:"Arial"}
 							class="dttab"></span></label></td>
 					<td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc">${Ldesc}</textarea></td>
 				</tr>
-		 
+							 
       <!--  Loss Description Field Demo - Appworks Demo - end --> 
 		
 		
